@@ -1,7 +1,7 @@
 {
   "name": "bajaj-finserv",
   "version": "1.0.0",
-  "description": "Digital Finserv Backend API",
+  "description": "Bajaj Finserv Backend API",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
