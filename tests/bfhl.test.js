@@ -1,7 +1,7 @@
 import axios from "axios";
 import { spawn } from "child_process";
 
-const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
+const BASE_URL = process.env.BASE_URL || "https://bajajfinserv-q1.vercel.app";
 const EMAIL = "kunal0638.be23@chitkara.edu.in";
 let server;
 
@@ -17,7 +17,7 @@ describe("Chitkara Qualifier API Tests", () => {
         const res = await axios.get(`${BASE_URL}/health`);
 
         expect(res.status).toBe(200);
-
+        console.log(res.data);
         expect(res.data).toMatchObject({
             is_success: true,
             official_email: EMAIL
@@ -31,6 +31,7 @@ describe("Chitkara Qualifier API Tests", () => {
             fibonacci: 7
         });
 
+        console.log(res.data);
         expect(res.status).toBe(200);
         expect(res.data.is_success).toBe(true);
         // expect(res.data.official_email).toBe(EMAIL);
@@ -44,6 +45,7 @@ describe("Chitkara Qualifier API Tests", () => {
             prime: [2, 4, 7, 9, 11]
         });
 
+        console.log(res.data);
         expect(res.status).toBe(200);
         expect(res.data.data).toEqual([2, 7, 11]);
     });
@@ -55,6 +57,7 @@ describe("Chitkara Qualifier API Tests", () => {
             lcm: [12, 18, 24]
         });
 
+        console.log(res.data);
         expect(res.status).toBe(200);
         expect(res.data.data).toBe(72);
     });
@@ -66,6 +69,7 @@ describe("Chitkara Qualifier API Tests", () => {
             hcf: [24, 36, 60]
         });
 
+        console.log(res.data);
         expect(res.status).toBe(200);
         expect(res.data.data).toBe(12);
     });
@@ -82,13 +86,14 @@ describe("Chitkara Qualifier API Tests", () => {
         }
 
         const res = await axios.post(`${BASE_URL}/bfhl`, {
-            AI: "What is the capital city of Maharashtra?"
+            AI: "What is the capital city of Punjab?"
         });
 
+        console.log(res.data);
         expect(res.status).toBe(200);
         expect(res.data.is_success).toBe(true);
         expect(typeof res.data.data).toBe("string");
-        // Expecting short answer (Mumbai)
+        // Expecting short answer (Chandigarh)
         expect(res.data.data.split(" ").length).toBeLessThanOrEqual(3);
     });
 
