@@ -74,15 +74,23 @@ describe("Chitkara Qualifier API Tests", () => {
 
     /* ---------------- AI ---------------- */
 
-    // test("POST /bfhl - AI Question", async () => {
-    //   const res = await axios.post(`${BASE_URL}/bfhl`, {
-    //     AI: "What is the capital city of Maharashtra?"
-    //   });
-    //   expect(res.status).toBe(200);
-    //   expect(res.data.is_success).toBe(true);
-    //   expect(typeof res.data.data).toBe("string");
-    //   expect(res.data.data.split(" ").length).toBe(1); 
-    // });
+    test("POST /bfhl - AI Question", async () => {
+        // Note: This test requires GEMINI_API_KEY to be set in .env
+        if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+            console.warn("Skipping AI test: GEMINI_API_KEY not set");
+            return;
+        }
+
+        const res = await axios.post(`${BASE_URL}/bfhl`, {
+            AI: "What is the capital city of Maharashtra?"
+        });
+
+        expect(res.status).toBe(200);
+        expect(res.data.is_success).toBe(true);
+        expect(typeof res.data.data).toBe("string");
+        // Expecting short answer (Mumbai)
+        expect(res.data.data.split(" ").length).toBeLessThanOrEqual(3);
+    });
 
     /* ---------------- ERROR CASES ---------------- */
 

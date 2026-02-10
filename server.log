@@ -1,0 +1,55 @@
+[INFO] Server running in development mode at http://localhost:3000
+[ERROR] Error: undefined is not an object (evaluating 'error.errors.map')
+[INFO] Server running in development mode at http://localhost:3000
+[sendResponse] Status: 200, Success: true, Data: null
+[sendResponse] Status: 200, Success: true, Data: [0,1,1,2,3,5,8]
+[sendResponse] Status: 200, Success: true, Data: [2,7,11]
+[sendResponse] Status: 200, Success: true, Data: 72
+[sendResponse] Status: 200, Success: true, Data: 12
+[sendResponse] Status: 200, Success: true, Data: "Mumbai"
+[sendResponse] Status: 200, Success: true, Data: [0,1,1,2,3]
+[Controller Error] ZodError: [
+  {
+    "code": "custom",
+    "path": [],
+    "message": "Request body must contain at least one of: fibonacci, prime, lcm, hcf, AI"
+  }
+]
+[ERROR] Error: undefined is not an object (evaluating 'error.errors.map')
+[INFO] Server running in development mode at http://localhost:3000
+[sendResponse] Status: 200, Success: true, Data: null
+[sendResponse] Status: 200, Success: true, Data: [0,1,1,2,3,5,8]
+[sendResponse] Status: 200, Success: true, Data: [2,7,11]
+[sendResponse] Status: 200, Success: true, Data: 72
+[sendResponse] Status: 200, Success: true, Data: 12
+[sendResponse] Status: 200, Success: true, Data: "Mumbai"
+[sendResponse] Status: 200, Success: true, Data: [0,1,1,2,3]
+[Controller Error] ZodError: [
+  {
+    "code": "custom",
+    "path": [],
+    "message": "Request body must contain at least one of: fibonacci, prime, lcm, hcf, AI"
+  }
+]
+[sendResponse] Status: 400, Success: false, Data: "[\n  {\n    \"code\": \"custom\",\n    \"path\": [],\n    \"message\": \"Request body must contain at least one of: fibonacci, prime, lcm, hcf, AI\"\n  }\n]"
+[Controller Error] ZodError: [
+  {
+    "origin": "number",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "fibonacci"
+    ],
+    "message": "Too small: expected number to be >=1"
+  }
+]
+[sendResponse] Status: 400, Success: false, Data: "[\n  {\n    \"origin\": \"number\",\n    \"code\": \"too_small\",\n    \"minimum\": 1,\n    \"inclusive\": true,\n    \"path\": [\n      \"fibonacci\"\n    ],\n    \"message\": \"Too small: expected number to be >=1\"\n  }\n]"
+[Controller Error] ZodError: [
+  {
+    "code": "custom",
+    "path": [],
+    "message": "Request body must contain at least one of: fibonacci, prime, lcm, hcf, AI"
+  }
+]
+[sendResponse] Status: 400, Success: false, Data: "[\n  {\n    \"code\": \"custom\",\n    \"path\": [],\n    \"message\": \"Request body must contain at least one of: fibonacci, prime, lcm, hcf, AI\"\n  }\n]"
